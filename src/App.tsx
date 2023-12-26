@@ -1,7 +1,7 @@
-import './App.css'
 import {useEffect, useState} from "react";
 import Item from "./interface/Item.ts";
 import {EDITOR_API_V1} from "../EDITOR_API_VER.tsx";
+import EditorPage from "./components/page";
 
 function App() {
   const [editor, setEditor] = useState<Item>(EDITOR_API_V1)
@@ -14,7 +14,9 @@ function App() {
   }, []);
 
   return (
-    <div></div>
+    <div>
+      <EditorPage {...editor} />
+    </div>
   )
 }
 
