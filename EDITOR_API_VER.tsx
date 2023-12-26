@@ -27,6 +27,27 @@ export const EDITOR_API_V1:Item = {
                                     id: `contents_${Math.random()}`,
                                     parentId: groupIds,
                                     type: 'CONTENTS',
+                                    contentsType: 'BUTTON',
+                                    childrenItem: [],
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: blockIds,
+                    parentId: layoutIds,
+                    type: 'BLOCK',
+                    childrenItem: [
+                        {
+                            id: groupIds,
+                            parentId: blockIds,
+                            type:'CONTENTS',
+                            childrenItem: [
+                                {
+                                    id: `contents_${Math.random()}`,
+                                    parentId: groupIds,
+                                    type: 'CONTENTS',
                                     contentsType: 'EMPTY',
                                     childrenItem: [],
                                 }
@@ -34,6 +55,7 @@ export const EDITOR_API_V1:Item = {
                         }
                     ]
                 }
+
             ]
         }
     ],

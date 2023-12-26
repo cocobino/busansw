@@ -3,6 +3,7 @@ import Item from "../../interface/Item.ts";
 import {css} from "@emotion/css";
 import ContentsButton from "./button";
 import ContentsEmpty from "./empty";
+import ContentsAdd from "./add";
 
 const EditorContents:FC<Item> = (props) => {
     const {contentsType} =props;
@@ -14,6 +15,8 @@ const EditorContents:FC<Item> = (props) => {
                 return <ContentsEmpty />
             case 'BUTTON':
                 return <ContentsButton />
+            case 'ADD':
+                return <ContentsAdd />
         }
     }
 
@@ -23,7 +26,6 @@ const EditorContents:FC<Item> = (props) => {
 
     return <div className={css`
         width: 100%;
-        height: 150px;
         background: red;
     `}>{contentsTypeElem()}</div>
 }

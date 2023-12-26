@@ -9,7 +9,7 @@ interface Item {
     parentId?:pageIdType | layoutIdType | blockIdType | groupIdType | contentsIdType;
     childrenItem:Item[];
     type: 'PAGE' | 'LAYOUT' | 'BLOCK' | 'GROUP' | 'CONTENTS';
-    contentsType?: 'EMPTY' | 'BUTTON' ;
+    contentsType?: 'EMPTY' | 'BUTTON' | 'ADD' ;
 }
 
 
