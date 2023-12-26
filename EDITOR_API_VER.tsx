@@ -1,28 +1,34 @@
-const pageIds = `page_${Math.random()}`;
-const layoutIds = `layout_${Math.random()}`;
-const blockIds = `block_${Math.random()}`;
-const groupIds = `group_${Math.random()}`;
+import Item, {blockIdType, groupIdType, layoutIdType, pageIdType} from "./src/interface/Item";
 
-export const EDITOR_API_V1 = {
+const pageIds:pageIdType = `page_${Math.random()}`;
+const layoutIds:layoutIdType = `layout_${Math.random()}`;
+const blockIds:blockIdType = `block_${Math.random()}`;
+const groupIds:groupIdType = `group_${Math.random()}`;
+
+export const EDITOR_API_V1:Item = {
     id: pageIds,
+    type: 'PAGE',
     childrenItem: [
         {
             id: layoutIds,
-            parentId: pageIds,
+            type: 'LAYOUT',
             childrenItem: [
                 {
                     id: blockIds,
                     parentId: layoutIds,
+                    type: 'BLOCK',
                     childrenItem: [
                         {
                             id: groupIds,
                             parentId: blockIds,
+                            type:'CONTENTS',
                             childrenItem: [
                                 {
                                     id: `contents_${Math.random()}`,
                                     parentId: groupIds,
                                     type: 'CONTENTS',
                                     contentsType: 'EMPTY',
+                                    childrenItem: [],
                                 }
                             ]
                         }
