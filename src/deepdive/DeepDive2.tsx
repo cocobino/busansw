@@ -2,26 +2,28 @@ import {useEffect, useState} from "react";
 
 const Parent = () => {
     const [list, ] = useState([{
-        title: 'a',
+        title: 'abc',
     }, {
         title: 'b',
     }]);
     const [checkedList, ] = useState([{
-        a: false,
+        a: true,
         b: false
     }]);
 
-    const [, setResult] = useState<any>([])
+    const [resultList, setResult] = useState<any>([])
 
     const util = ():Array<any> => {
         return list.map(list => ({list, checkedList: false}))
     }
 
-    useEffect(() => {
-        setResult(util());
-    }, [list, checkedList])
+    // useEffect(() => {
+    //     setResult(util());
+    // }, [list, checkedList])
 
 
-    return <div></div>
+    return <div>
+        {util().map(reulst => <li>...</li>)}
+    </div>
 }
 export default Parent

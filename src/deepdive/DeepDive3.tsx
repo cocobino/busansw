@@ -4,16 +4,18 @@ const TextList = () => {
     const [select, setSelect] = useState(0)
 
     return <div>
-        <Focus select={select} />
+        <Focus key={select}  select={select} />
     </div>
 }
 
-const Focus: FC<{ select: number; }> = ({focus}) => {
-    const [init, setInit] = useState(true)
+const Focus: FC<{ select: number; }> =
+    ({select}) => {
+    const [init, setInit] =
+        useState('')
 
-    useEffect(() => {
-        setInit(false)
-    }, [focus])
+    // useEffect(() => {
+    //     setInit(true)
+    // }, [select])
 
     return null;
 
